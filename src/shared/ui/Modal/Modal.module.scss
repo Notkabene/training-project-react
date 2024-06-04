@@ -8,6 +8,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s, z-index 0.5s;
+    color: var(--primary-color);
 }
 
 .overlay {
