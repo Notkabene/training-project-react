@@ -19,8 +19,6 @@ export const Modal = (props: ModalProps) => {
         onClose,
     } = props;
 
-    const { theme } = useTheme();
-
     const closeHandler = useCallback(() => {
         if (onClose) {
             onClose();
@@ -54,7 +52,7 @@ export const Modal = (props: ModalProps) => {
     return (
         <Portal>
             <div
-                className={classNames(cls.Modal, mods, [className, theme])}
+                className={classNames(cls.Modal, mods, [className])}
             >
                 <div className={cls.overlay} onClick={closeHandler}>
                     <div className={cls.content} onClick={onContentClick}>
