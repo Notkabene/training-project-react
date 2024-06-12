@@ -11,6 +11,6 @@
     "name": "typicode"
   },
   "users": [
-    { "id": 1, "username": "admin", "password": "123" }
+    { "id": "1", "username": "admin", "password": "123" }
   ]
 }
