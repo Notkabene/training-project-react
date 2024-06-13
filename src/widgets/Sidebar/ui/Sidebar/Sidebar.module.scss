@@ -31,21 +31,6 @@
     flex-direction: column;
 }
 
-.link {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.link span {
-    transition: opacity 0.3s;
-}
-
-.icon {
-    margin-right: 10px;
-    fill: var(--inverted-primary-color);
-}
-
 .collapsed {
     width: var(--sidebar-width-collapsed);
 
@@ -57,10 +42,5 @@
     .lang {
         margin-left: 0;
         margin-top: 10px;
-    }
-
-    .link span {
-        opacity: 0;
-        width: 0;
     }
 }
