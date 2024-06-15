@@ -1,12 +1,12 @@
 import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { loginByUsername } from './loginByUsername';
+import { loginByUserName } from './loginByUserName';
 
-describe('loginByUsername.test', () => {
+describe('loginByUserName.test', () => {
     test('success login', async () => {
         const userValue = { username: '123', id: '1' };
 
-        const thunk = new TestAsyncThunk(loginByUsername);
+        const thunk = new TestAsyncThunk(loginByUserName);
         thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }));
         const result = await thunk.callThunk({ username: '123', password: '123' });
 
@@ -18,7 +18,7 @@ describe('loginByUsername.test', () => {
     });
 
     test('error login', async () => {
-        const thunk = new TestAsyncThunk(loginByUsername);
+        const thunk = new TestAsyncThunk(loginByUserName);
         thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
         const result = await thunk.callThunk({ username: '123', password: '123' });
 
