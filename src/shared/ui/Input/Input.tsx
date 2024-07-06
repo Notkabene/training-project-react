@@ -1,28 +1,31 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import React, {
-    FC, InputHTMLAttributes, memo, useState,
+    InputHTMLAttributes, memo, useState,
 } from 'react';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange | readOnly'>
 
+// @ts-ignore
 interface InputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   type?: string;
   id: string;
   placeholder?: string;
   onChange?: (value: string) => void;
+  readonly?: boolean;
 }
 
 export const Input = memo((props:InputProps) => {
     const {
         className,
         value,
+        onChange,
         type = 'text',
         id,
         placeholder = '',
-        onChange,
+        readonly,
         ...otherProps
     } = props;
 
@@ -40,10 +43,15 @@ export const Input = memo((props:InputProps) => {
         onChange?.(e.target.value);
     };
 
+    const mods:Mods = {
+        [cls.focus]: isFocused || value,
+        [cls.readonly]: readonly,
+    };
+
     return (
         <label
             htmlFor={id}
-            className={classNames(cls.label, { [cls.focus]: isFocused || value }, [className])}
+            className={classNames(cls.label, mods, [className])}
         >
             {placeholder && <span className={cls.placeholder}>{placeholder}</span>}
 
@@ -55,6 +63,7 @@ export const Input = memo((props:InputProps) => {
                 className={cls.Input}
                 onFocus={handleOnFocus}
                 onBlur={handleBlur}
+                readOnly={readonly}
                 {...otherProps}
             />
         </label>

@@ -1,11 +1,11 @@
-.ProfileCard {
-    padding: 20px;
-    border: 2px solid var(--inverted-bg-color);
-}
-
-.header {
+.ProfilePageHeader {
     display: flex;
     gap: 30px;
     justify-content: space-between;
     margin-bottom: 30px;
+}
+
+.btns {
+    display: flex;
+    gap: 30px;
 }

@@ -1,0 +1,38 @@
+.Select {
+    width: 100%;
+    color: var(--primary-color);
+    padding: 7px 10px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--primary-color);
+    position: relative;
+
+    &:focus {
+        outline: 1px solid var(--primary-color);
+    }
+}
+
+.placeholder {
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    transition: top 0.5s;
+    font: var(--font-m);
+    background-color: var(--bg-color);
+    padding: 0 4px;
+    z-index: 1;
+    top: -14px;
+    transform: translateY(0);
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.readonly {
+    opacity: 0.6;
+}
