@@ -1,4 +1,4 @@
-import { getProfileFirstName } from './model/selectors/getProfileFirstName/getProfileFirstName';
+// import { getProfileFirstName } from './model/selectors/getProfileFirstName/getProfileFirstName';
 import { getProfileData } from './model/selectors/getProfileData/getProfileData';
 import { getProfileError } from './model/selectors/getProfileError/getProfileError';
 import { getProfileIsLoading } from './model/selectors/getProfileIsLoading/getProfileIsLoading';
@@ -18,7 +18,7 @@ export {
     Profile,
     ProfileSchema,
     profileActions,
-    getProfileFirstName,
+    // getProfileFirstName,
     getProfileData,
     getProfileError,
     getProfileIsLoading,
