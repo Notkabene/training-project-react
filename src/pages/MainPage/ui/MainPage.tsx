@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
+import { colors } from '@storybook/addon-interactions/dist/ts3.9/theme';
 
 const MainPage = () => {
     const { t } = useTranslation();
